@@ -16,7 +16,6 @@
     <img alt="TypeScript" src="https://img.shields.io/badge/TypeScript-5.8-3178C6?logo=typescript&logoColor=white" />
     <img alt="tRPC" src="https://img.shields.io/badge/tRPC-11-2596BE?logo=trpc&logoColor=white" />
     <img alt="Remotion" src="https://img.shields.io/badge/Remotion-4-000000" />
-    <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-green.svg" />
   </p>
 </div>
 
@@ -77,21 +76,21 @@ restarts and long-running renders, while the **progressive streaming** layer
 
 ## Tech stack
 
-| Area            | Choice                                                        |
-| --------------- | ------------------------------------------------------------- |
-| Framework       | Next.js 15 (App Router), React 19, TypeScript                 |
-| API             | tRPC 11 + TanStack Query                                      |
-| Database        | PostgreSQL + Drizzle ORM                                      |
-| Auth            | Clerk                                                          |
-| Orchestration   | Inngest (durable, event-driven pipeline)                      |
-| Realtime        | Upstash Realtime + Redis                                      |
-| Script AI       | Google Gemini 2.5 Flash (Vercel AI SDK)                       |
-| Image / Voice   | Replicate (image models + ElevenLabs Flash v2.5)             |
-| Video           | Remotion + Remotion Lambda                                    |
-| Storage         | Cloudflare R2                                                 |
-| Payments        | Stripe (credits)                                              |
-| Styling         | Tailwind CSS v4 + Radix / shadcn UI                           |
-| Deployment      | Vercel                                                        |
+| Area          | Choice                                           |
+| ------------- | ------------------------------------------------ |
+| Framework     | Next.js 15 (App Router), React 19, TypeScript    |
+| API           | tRPC 11 + TanStack Query                         |
+| Database      | PostgreSQL + Drizzle ORM                         |
+| Auth          | Clerk                                            |
+| Orchestration | Inngest (durable, event-driven pipeline)         |
+| Realtime      | Upstash Realtime + Redis                         |
+| Script AI     | Google Gemini 2.5 Flash (Vercel AI SDK)          |
+| Image / Voice | Replicate (image models + ElevenLabs Flash v2.5) |
+| Video         | Remotion + Remotion Lambda                       |
+| Storage       | Cloudflare R2                                    |
+| Payments      | Stripe (credits)                                 |
+| Styling       | Tailwind CSS v4 + Radix / shadcn UI              |
+| Deployment    | Vercel                                           |
 
 ## Getting started
 
@@ -152,17 +151,21 @@ src/
 
 ## Scripts
 
-| Command             | Description                                  |
-| ------------------- | -------------------------------------------- |
-| `pnpm dev`          | Start the dev server                         |
-| `pnpm build`        | Production build                             |
-| `pnpm inngest:dev`  | Run the Inngest dev server (pipeline)        |
-| `pnpm db:push`      | Push the Drizzle schema to the database      |
-| `pnpm db:studio`    | Open Drizzle Studio                          |
-| `pnpm test`         | Run the Vitest test suite                    |
-| `pnpm typecheck`    | Type-check without emitting                  |
-| `pnpm lint`         | Lint with ESLint                             |
+| Command            | Description                             |
+| ------------------ | --------------------------------------- |
+| `pnpm dev`         | Start the dev server                    |
+| `pnpm build`       | Production build                        |
+| `pnpm inngest:dev` | Run the Inngest dev server (pipeline)   |
+| `pnpm db:push`     | Push the Drizzle schema to the database |
+| `pnpm db:studio`   | Open Drizzle Studio                     |
+| `pnpm test`        | Run the Vitest test suite               |
+| `pnpm typecheck`   | Type-check without emitting             |
+| `pnpm lint`        | Lint with ESLint                        |
 
-## License
+## Copyright
 
-[MIT](LICENSE) © Rishabh Singh
+© 2026 Rishabh Singh.
+
+No project-wide license is offered for this revision. Previously licensed copies
+retain the permissions granted under their original terms. Third-party components
+remain subject to their own licenses.
