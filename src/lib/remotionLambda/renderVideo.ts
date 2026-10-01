@@ -19,6 +19,8 @@ export async function startVideoRender({
     composition: "AnimeRoom",
     inputProps: finalJobState,
     codec: "h264",
+    // Leave room for the launch function and progress polling on a low AWS quota.
+    concurrency: 5,
     outName: `${jobId}.mp4`,
   });
 
