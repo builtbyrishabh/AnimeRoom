@@ -61,7 +61,7 @@
     "inngest": "^4.13.0",
     "lucide-react": "^0.575.0",
     "mediabunny": "^1.39.2",
-    "next": "^15.5.20",
+    "next": "^15.5.24",
     "next-themes": "^0.4.6",
     "postgres": "^3.4.4",
     "radix-ui": "^1.4.3",
@@ -72,7 +72,7 @@
     "remotion": "4.0.425",
     "replicate": "^1.4.0",
     "server-only": "^0.0.1",
-    "sharp": "^0.34.5",
+    "sharp": "^0.35.4",
     "sonner": "^2.0.7",
     "stripe": "^21.0.1",
     "superjson": "^2.2.1",
@@ -90,7 +90,7 @@
     "drizzle-kit": "^0.31.10",
     "esbuild": "^0.27.3",
     "eslint": "^9.23.0",
-    "eslint-config-next": "^15.5.20",
+    "eslint-config-next": "^15.5.24",
     "eslint-plugin-drizzle": "^0.2.3",
     "postcss": "^8.5.3",
     "prettier": "^3.5.3",
@@ -118,7 +118,16 @@
       "flatted": "^3.4.2",
       "picomatch": "^4.0.4",
       "path-to-regexp": "^8.4.0",
-      "fast-uri": "^3.1.2"
+      "fast-uri": "^3.1.7",
+      "js-yaml@4": "^4.3.2",
+      "postcss": "^8.5.18",
+      "browserslist": "^4.28.7",
+      "nanoid@3": "^3.3.18",
+      "@grpc/grpc-js": "^1.14.5",
+      "ip-address@10": "^10.3.1",
+      "brace-expansion@1": "^1.1.20",
+      "brace-expansion@2": "^2.1.6",
+      "brace-expansion@5": "^5.0.11"
     }
   }
 }
