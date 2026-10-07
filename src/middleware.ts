@@ -9,6 +9,11 @@ const isPublicRoute = createRouteMatcher([
   "/api/trpc/job.getPublicManifest(.*)",
   "/legal(.*)",
   "/support",
+  "/our-story",
+  "/how-it-works",
+  "/pricing",
+  "/faq",
+  "/mobile",
 ]);
 
 export default clerkMiddleware(async (auth, req) => {

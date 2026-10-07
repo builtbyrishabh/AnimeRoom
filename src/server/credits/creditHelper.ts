@@ -1,5 +1,6 @@
 import { eq, sql } from "drizzle-orm";
 import { db } from "../db";
+import { SIGNUP_BONUS_CREDITS } from "~/config/credits/welcome";
 import {
   creditTransactionsTable,
   userCreditAccountTable,
@@ -12,9 +13,7 @@ type DbOrTransaction =
   | typeof db
   | Parameters<Parameters<typeof db.transaction>[0]>[0];
 
-/** Credits granted once to every new user. Single source of truth so the
- * webhook path and the lazy fallback path can never drift apart. */
-export const SIGNUP_BONUS_CREDITS = 10;
+export { SIGNUP_BONUS_CREDITS } from "~/config/credits/welcome";
 
 /** Postgres unique-violation error code. Thrown when a concurrent grant wins
  * the race and inserts the unique `source_id` first. */

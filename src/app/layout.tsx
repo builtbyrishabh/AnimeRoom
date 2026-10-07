@@ -13,9 +13,9 @@ import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
 export const metadata: Metadata = {
-  title: "Anime Room",
+  title: "AnimeRoom",
   description:
-    "Create Roast battle videos with your favourite anime characters",
+    "Turn your favourite anime matchups into cinematic roast-battle reels with AI-generated dialogue, visuals, and voices.",
   icons: [{ rel: "icon", url: "/icon.png" }],
 };
 
