@@ -1,87 +1,83 @@
-import { LifeBuoy, Mail, CreditCard, ShieldCheck } from "lucide-react";
+import type { Metadata } from "next";
 import Link from "next/link";
+import { ArrowUpRight, Mail } from "lucide-react";
+import { PageIntro } from "../_components/site-sections";
 
-export const metadata = {
-  title: "Support — AnimeRoom",
+export const metadata: Metadata = {
+  title: "Support & contact | AnimeRoom",
+  description:
+    "Contact AnimeRoom for help with video generation, billing, refunds, or content concerns.",
 };
 
-const quickLinks = [
+const links = [
   {
-    icon: CreditCard,
-    title: "Billing & credits",
-    desc: "Buy credits, check your balance, or see the refund policy.",
-    href: "/billing",
-    color: "bg-[var(--color-nb-mint)]",
+    title: "Common questions",
+    description: "Get answers about generation, previews, and video exports.",
+    href: "/faq",
   },
   {
-    icon: ShieldCheck,
+    title: "Pricing & credits",
+    description: "Understand signup credits and one-time credit packs.",
+    href: "/pricing",
+  },
+  {
     title: "Refund policy",
-    desc: "When credits are refunded automatically vs. manually.",
+    description: "See how failed generations and purchase refunds work.",
     href: "/legal/refund",
-    color: "bg-[var(--color-nb-yellow)]",
-  },
-  {
-    icon: LifeBuoy,
-    title: "Privacy policy",
-    desc: "What data we collect and how deletion works today.",
-    href: "/legal/privacy",
-    color: "bg-[var(--color-nb-lavender)]",
   },
 ];
 
 export default function SupportPage() {
   return (
-    <div className="mx-auto flex w-full max-w-3xl flex-col gap-8 px-4 py-4 sm:px-6 sm:py-8">
-      <div>
-        <h1 className="text-3xl font-extrabold tracking-tight uppercase sm:text-4xl">
-          Support
-        </h1>
-        <p className="mt-2 max-w-xl text-sm font-bold text-[var(--color-nb-text)]/70">
-          AnimeRoom is a small, early-stage team. Reach out and a real person
-          will get back to you — usually within 2 business days.
+    <div className="site-container narrow-page">
+      <PageIntro
+        eyebrow="SUPPORT & CONTACT"
+        title="A little help for your next reel."
+        description="Need a hand with the studio, a purchase, or a video? Get in touch with the AnimeRoom team."
+      />
+      <div className="support-email">
+        <div>
+          <Mail size={25} aria-hidden="true" />
+          <div>
+            <span>EMAIL THE TEAM</span>
+            <a href="mailto:support@animeroom.space">
+              support@animeroom.space{" "}
+              <ArrowUpRight size={18} aria-hidden="true" />
+            </a>
+          </div>
+        </div>
+        <p>
+          Include the email on your account and a link to the video or purchase
+          details, if relevant.
         </p>
       </div>
-
-      <a
-        href="mailto:support@animeroom.space"
-        className="nb-btn flex w-full items-center justify-center gap-3 rounded-none border-[3px] border-[var(--color-nb-border)] bg-[var(--color-nb-pink)] px-6 py-4 font-extrabold text-[var(--color-nb-text)] shadow-[4px_4px_0px_var(--color-nb-shadow)] transition-all hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_var(--color-nb-shadow)] sm:w-auto"
-      >
-        <Mail className="h-5 w-5" />
-        support@animeroom.space
-      </a>
-
-      <div>
-        <h2 className="mb-3 text-lg font-extrabold tracking-widest uppercase">
-          Quick links
-        </h2>
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
-          {quickLinks.map((link) => {
-            const Icon = link.icon;
-            return (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="group flex flex-col gap-2 rounded-none border-[3px] border-[var(--color-nb-border)] bg-white p-4 shadow-[4px_4px_0px_var(--color-nb-shadow)] transition-all hover:-translate-y-0.5"
-              >
-                <div
-                  className={`flex h-9 w-9 items-center justify-center border-[2px] border-[var(--color-nb-border)] ${link.color}`}
-                >
-                  <Icon className="h-4 w-4" />
-                </div>
-                <p className="text-sm font-extrabold">{link.title}</p>
-                <p className="text-xs font-medium text-[var(--color-nb-text)]/60">
-                  {link.desc}
-                </p>
-              </Link>
-            );
-          })}
-        </div>
+      <nav className="support-links" aria-label="Help resources">
+        {links.map((link) => (
+          <Link href={link.href} key={link.href}>
+            <h2>
+              {link.title}
+              <ArrowUpRight size={16} aria-hidden="true" />
+            </h2>
+            <p>{link.description}</p>
+          </Link>
+        ))}
+      </nav>
+      <div className="support-details">
+        <section>
+          <h2>Found a bug?</h2>
+          <p>
+            Tell us what you were trying to do, what happened, and any error
+            message you saw. A screenshot can help us understand the issue.
+          </p>
+        </section>
+        <section>
+          <h2>Have a content concern?</h2>
+          <p>
+            Send the video link and a description of your concern, including any
+            relevant rights information. We&apos;ll review your report.
+          </p>
+        </section>
       </div>
-
-      <p className="text-xs font-bold text-[var(--color-nb-text)]/50">
-        Found a bug, or content that shouldn&apos;t be on AnimeRoom? Email us at
-        the address above — include a link or screenshot if you can.
-      </p>
     </div>
   );
 }

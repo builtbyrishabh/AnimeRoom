@@ -1,21 +1,48 @@
-import React from "react";
-import { SidebarProvider, SidebarTrigger } from "~/components/ui/sidebar";
-import AppSidebar from "../_components/sidebar";
-import TopNavbar from "../_components/topNavbar";
+import type { Metadata } from "next";
+import type { ReactNode } from "react";
+import { env } from "~/env";
+import SiteHeader from "./_components/site-header";
+import SiteFooter from "./_components/site-footer";
+import "./marketing.css";
+
+const description =
+  "Create cinematic anime roast-battle reels from a single prompt. AnimeRoom brings character dialogue, visuals, and voices together in an exportable vertical video.";
+
+export const metadata: Metadata = {
+  metadataBase: new URL(env.NEXT_PUBLIC_APP_URL),
+  openGraph: {
+    title: "AnimeRoom | Your favourite characters. Your next great reel.",
+    description,
+    siteName: "AnimeRoom",
+    type: "website",
+    images: [
+      {
+        url: "/website/anime/social-cover.webp",
+        width: 1200,
+        height: 800,
+        alt: "Original anime character artwork for AnimeRoom",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "AnimeRoom | Create standout anime reels",
+    description,
+    images: ["/website/anime/social-cover.webp"],
+  },
+};
 
 export default function PublicLayout({
   children,
-}: Readonly<{ children: React.ReactNode }>) {
+}: Readonly<{ children: ReactNode }>) {
   return (
-    <SidebarProvider defaultOpen={true}>
-      <AppSidebar />
-      <main className="flex-1 overflow-auto bg-[var(--color-nb-bg)]">
-        <div className="flex h-16 items-center gap-2 border-b-[3px] border-[var(--color-nb-border)] px-8">
-          <SidebarTrigger size={"lg"} className="rounded-none font-bold" />
-          <TopNavbar />
-        </div>
-        <div className="p-6">{children}</div>
-      </main>
-    </SidebarProvider>
+    <div className="marketing-site">
+      <a className="skip-link" href="#main-content">
+        Skip to content
+      </a>
+      <SiteHeader />
+      <main id="main-content">{children}</main>
+      <SiteFooter />
+    </div>
   );
 }
